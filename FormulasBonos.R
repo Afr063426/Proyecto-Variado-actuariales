@@ -37,3 +37,16 @@ d_Macaulay <- function(P, C, r) {
 d_Modificada <- function(P, C, r) {
   -1 / (1 + r) * d_Macaulay(P, C, r)
 }
+
+
+
+## Tasas Spot 
+t_spot<-function(P,M){
+  (M/(P))^(1/c(1:length(P)))-1
+}
+
+
+##Tasas Forward
+t_forward<-function(P,M){
+  
+}
