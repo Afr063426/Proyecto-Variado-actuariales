@@ -1,6 +1,6 @@
 # Scipt con las fórmulas
 library(lifecontingencies)
-
+install.packages('lubridate')
 
 #Casos de periodos completos
 precio_sucio <- function(C, m, r, F, M, n) {
