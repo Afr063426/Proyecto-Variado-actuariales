@@ -52,3 +52,6 @@ t_forward<-function(P,M){
   t_s[-1]^c(2:length(t_s))/(t_s[-length(t_s)]^c(1:length(t_s[-length(t_s)])))-1
 }
 
+
+
+precio_sucio(0.055,1,0.05,100,100,3)
