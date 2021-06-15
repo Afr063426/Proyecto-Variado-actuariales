@@ -50,3 +50,23 @@ probabilidadGanancia<-function(tiempo,precio,mayor,media,desviacio){
 }
 probabilidadGanancia(20,97,100,0.0002,0.03)
 
+
+#### Ejercicio 6 la suma de normales es normal entonces veamos cuánto es el mínimo para que la probabilidad
+### de que valga el doble en una probabilidad mayor a 0.9
+### Entonces se programa con un while y entonces esto coincide 1 menos la probabilidad de que sea menor al doble
+##### Da un numero muy grande si se cambia a 0.05 queda en 21 dias
+i=1
+mayor=F
+while(!mayor){
+  mayor=(1-pnorm(log(2),i*0.05,i*0.012))>=0.9
+  i=i+1
+}
+i-1
+
+
+i=1
+mayor=F
+while (!mayor) {
+  mayor=(1-probabilidadPerdida(i,1,2,0.0005,0.012))>=0.9
+  i=i+1
+}
