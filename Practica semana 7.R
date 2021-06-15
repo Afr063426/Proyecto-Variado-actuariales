@@ -37,3 +37,16 @@ datosEjercicio4<-as.data.frame(datosEjercicio4)
 ### Calculo de retorno 
 R_3_2<-prod((datosEjercicio4$P_t[3-c(0:(2-1))]+datosEjercicio4$D_t[3-c(0:(2-1))])/datosEjercicio4$P_t[3-c(1:2)])-1
 r_3_3<-log(prod((datosEjercicio4$P_t[4-c(0:(3-1))]+datosEjercicio4$D_t[4-c(0:(3-1))])/datosEjercicio4$P_t[4-c(1:3)]))
+### Funcion para ver si es superior a un precio
+probabilidadGanancia<-function(tiempo,precio,mayor,media,desviacio){
+  niter<-1e5 ### numero de repeticiones
+  up<-rep(0,niter)# numero de datos
+  for(i in 1:niter){
+    r<-rnorm(tiempo,mean=media,sd=desviacio) ### numeros aleatorios
+    logPrice<-log(precio)+sum(r)### calculo de precio after
+    up[i]<-as.numeric(logPrice>log(mayor))## se determinan cuantos est?n por debajo
+  }
+  return(mean(up)) ### Se retorna la media
+}
+probabilidadGanancia(20,97,100,0.0002,0.03)
+
