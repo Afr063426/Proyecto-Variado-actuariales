@@ -51,7 +51,7 @@ probabilidadGanancia<-function(tiempo,precio,mayor,media,desviacio){
 probabilidadGanancia(20,97,100,0.0002,0.03)
 
 
-#### Ejercicio 6 la suma de normales es normal entonces veamos cu·nto es el mÌnimo para que la probabilidad
+#### Ejercicio 6 la suma de normales es normal entonces veamos cu?nto es el m?nimo para que la probabilidad
 ### de que valga el doble en una probabilidad mayor a 0.9
 ### Entonces se programa con un while y entonces esto coincide 1 menos la probabilidad de que sea menor al doble
 ##### Da un numero muy grande si se cambia a 0.05 queda en 21 dias
@@ -70,3 +70,43 @@ while (!mayor) {
   mayor=(1-probabilidadPerdida(i,1,2,0.0005,0.012))>=0.9
   i=i+1
 }
+
+
+
+
+### Esto no se hace pero aqu√≠ se va poner la parte 9
+
+### Ejercicio 1
+100*exp(0.1*sqrt(1/252)*252)
+100*(1+0.1*sqrt(1/252)*252+0.1*sqrt(1/252)*252/2)
+
+
+### Ejercicio 2
+
+###100 periodos
+u_n=exp(0.15*1/sqrt(4)*1/sqrt(100))
+d_n=exp(-0.15*1/sqrt(4)*1/sqrt(100))
+m=0.08/4
+p_n=(exp(m*1/100)-d_n)/(u_n-d_n)
+45*(u_n*p_n+(1-p_n)*d_n)^(100)
+
+### 80 periodos
+u_n=exp(0.15*1/sqrt(4)*1/sqrt(80))
+d_n=exp(-0.15*1/sqrt(4)*1/sqrt(80))
+m=0.08/4
+p_n=(exp(m*1/80)-d_n)/(u_n-d_n)
+45*(u_n*p_n+(1-p_n)*d_n)^(80)
+
+
+### Ejercicio 5.14 
+
+### Si es posible obtener el mismo precio ya que se divide en un numero par de tal forma que basta que suba y baje la misma cantidadd veces
+
+
+### La probabilidad de que ocurra este precio es
+choose(80,40)*p_n^(40)*(1-p_n)^(40)
+
+
+###La probabilidad de que sea mayor es
+1-sum(choose(80,0:40)*p_n^(0:40)*(1-p_n)^(80-0:40))
+
